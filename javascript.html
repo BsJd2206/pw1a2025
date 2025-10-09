@@ -1,7 +1,14 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
 
     var nome = "Beatriz"
-    var idade = "35"
     var idadepassada = 34 
     var anopassado = 2024
     var anoatual = '2025'
@@ -23,16 +30,131 @@
 
     */
 
-    var n1 = prompt("Digite o primeiro número: ")
+
+     /*
+
+     COMPLETO
+
+    var n1 = prompt("Digite o primeiro número:")
     alert ("O número digitado foi: "+n1)
     var n2 = prompt("Digite o segundo número: ")
     alert ("O número digitado foi: "+n2)
     var n3 = prompt("Digite o terceiro número: ")
     alert ("O número digitado foi: "+n3)
+
+    n1 = Number (n1)
+    n2 = Number (n2)
+    n3 = Number (n3)
+
     var soma = (n1+n2+n3)
 
     alert("A soma dos valores é: "+soma)
+    */
+
+    /*
+
+    RESUMO (1 LINHA SÓ)
+
+    alert (Number(prompt("Digite o primeiro número:"))+Number(prompt("Digite o segundo número: "))+Number(prompt("Digite o terceiro número: ")))
+    */
 
 
+    /*
+
+    VERIFICAR SE É IMPAR/PAR
+    var numero = Number (prompt ("Digite um número: "))
+    if (numero % 2 == 0)
+{
+    alert("O número "+numero+" é par")
+}
+else
+{
+    alert ("O número "+numero+" é ímpar")
+}
+
+    */
+
+    /*
+    Peça para o usuário digitar uma idade
+    e verifique se ele pode beber e dirigir 
+    Se pode beber, exiba um alerta
+    autorizando comprar metanol
+    */
+    
+/* 
+SE / SENAO
+
+    var idade = prompt("Digite sua idade: ")
+    alert ("A idade digitada foi: "+idade)
+
+    if (idade>=18)
+    {
+        alert ("Pode comprar Metanol e dirigir, ta liberadasso!")
+    }
+    else {
+        alert ("Vá tomar Toddynho e andar de bike, neném!")
+    }
+*/
+
+/*
+    || -> é OU
+    ! -> Vai inverter o resultado
+*/
+
+/*
+    var tempo = true
+    var dinheiro = true
+    if (tempo==true && dinheiro == true)
+    {
+        alert ("Viajo")
+    }
+
+    var namorada = false
+    if (namorada == true || dinheiro == true)
+    {
+
+    }
+    */
+
+
+    /*
+
+    RESULTADO INVERTIDO
+
+    if(! (namorada==false))
+    {
+
+    }
+    else{
+        alert ("o Not inverteu o resultado da expressão boleana")
+    }
+  
+    */
+
+    var valor = Number (prompt("Digite seu salário: "))
+    alert ("O valor digitado foi: R$"+valor)
+
+    if (valor<=499)
+    {
+        alert ("Você não vai para lugar nenhum!")
+    }
+    else if (valor == 500)
+    {
+    alert ("Você vai para São Paulo")
+    }
+    else if ( valor>= 501 && valor<=700)
+    {
+        alert ("Você vai para o Rio de Janeiro")
+    }
+    else if (valor>= 701 && valor<=1000)
+    {
+        alert ("Você vai para Minas Gerais!")
+    }
+    else 
+    {
+        alert ("Você vai para o Nordeste!")
+    }
 
 </script>
+</body>
+</html>
