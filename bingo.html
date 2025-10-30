@@ -24,7 +24,7 @@
 
         td {
             font-size: 30pt;
-            background-color: #ffffff;
+            background-color: white;
             padding: 10px;
             border-radius: 5pX;
             text-align: center;
@@ -53,41 +53,41 @@
         </thead>
         <tbody>
             <tr>
-                <td> 11 </td> <!-- Coluna B-->
-                <td> 24 </td> <!-- Coluna I-->
-                <td> 40 </td> <!-- Coluna N-->
-                <td> 60 </td> <!-- Coluna G-->
-                <td> 62 </td> <!-- Coluna O-->
+                <td onclick="Marcar(this)"> 11 </td> <!-- Coluna B-->
+                <td onclick="Marcar(this)"> 24 </td> <!-- Coluna I-->
+                <td onclick="Marcar(this)"> 40 </td> <!-- Coluna N-->
+                <td onclick="Marcar(this)"> 60 </td> <!-- Coluna G-->
+                <td onclick="Marcar(this)"> 62 </td> <!-- Coluna O-->
             </tr>
             <tr>
-                <td> 9 </td> <!-- Coluna B-->
-                <td> 26 </td> <!-- Coluna I-->
-                <td> 41 </td> <!-- Coluna N-->
-                <td> 47 </td> <!-- Coluna G-->
-                <td> 63 </td> <!-- Coluna O-->
+                <td onclick="Marcar(this)"> 9 </td> <!-- Coluna B-->
+                <td onclick="Marcar(this)"> 26 </td> <!-- Coluna I-->
+                <td onclick="Marcar(this)"> 41 </td> <!-- Coluna N-->
+                <td onclick="Marcar(this)"> 47 </td> <!-- Coluna G-->
+                <td onclick="Marcar(this)"> 63 </td> <!-- Coluna O-->
             </tr>
             <tr>
-                <td> 1 </td> <!-- Coluna B-->
-                <td> 30 </td> <!-- Coluna I-->
-                <td>
+                <td onclick="Marcar(this)"> 1 </td> <!-- Coluna B-->
+                <td onclick="Marcar(this)"> 30 </td> <!-- Coluna I-->
+                <td onclick="Marcar(this)">
                     <img src="imagens/indio2.png" width="50" height="50" title="Indio" />
                 </td> <!-- Coluna N-->
-                <td> 48 </td> <!-- Coluna G-->
-                <td> 69 </td> <!-- Coluna O-->
+                <td onclick="Marcar(this)"> 48 </td> <!-- Coluna G-->
+                <td onclick="Marcar(this)"> 69 </td> <!-- Coluna O-->
             </tr>
             <tr>
-                <td> 15 </td> <!-- Coluna B-->
-                <td> 17 </td> <!-- Coluna I-->
-                <td> 31 </td> <!-- Coluna N-->
-                <td> 54 </td> <!-- Coluna G-->
-                <td> 71 </td> <!-- Coluna O-->
+                <td onclick="Marcar(this)"> 15 </td> <!-- Coluna B-->
+                <td onclick="Marcar(this)"> 17 </td> <!-- Coluna I-->
+                <td onclick="Marcar(this)"> 31 </td> <!-- Coluna N-->
+                <td onclick="Marcar(this)"> 54 </td> <!-- Coluna G-->
+                <td onclick="Marcar(this)"> 71 </td> <!-- Coluna O-->
             </tr>
             <tr>
-                <td> 7 </td> <!-- Coluna B-->
-                <td> 18 </td> <!-- Coluna I-->
-                <td> 33 </td> <!-- Coluna N-->
-                <td> 56 </td> <!-- Coluna G-->
-                <td> 75 </td> <!-- Coluna O-->
+                <td onclick="Marcar(this)"> 7 </td> <!-- Coluna B-->
+                <td onclick="Marcar(this)"> 18 </td> <!-- Coluna I-->
+                <td onclick="Marcar(this)"> 33 </td> <!-- Coluna N-->
+                <td onclick="Marcar(this)"> 56 </td> <!-- Coluna G-->
+                <td onclick="Marcar(this)"> 75 </td> <!-- Coluna O-->
             </tr>
 
         </tbody>
@@ -134,25 +134,58 @@
         //document.write("<h1> "+ParOuImpar(numero)+"</h1>")
 
 
-            function ExibirLista(Lista)
-            {
-                document.write(Lista+"<br>")
-            }
+            // function ExibirLista(Lista)
+            // {
+            //     document.write(Lista+"<br>")
+            // }
             
-            function ExibirListaDetalhada (Lista)
+            // function ExibirListaDetalhada (Lista)
+            // {
+            // for (var i = 0; i < Lista.length; i++)
+            // {
+            // document.write ("<h1>" +Lista[i]+ "</h1>")
+            // }
+            // }
+
+            // ExibirListaDetalhada (B)
+            // ExibirListaDetalhada (I)
+            // ExibirListaDetalhada (N)
+            // ExibirListaDetalhada (G)
+            // ExibirListaDetalhada (O)
+            // ExibirListaDetalhada (SORTEIO)
+
+            function Marcar(elementoClicado)
             {
-            for (var i = 0; i < Lista.length; i++)
-            {
-            document.write ("<h1>" +Lista[i]+ "</h1>")
+              
+               elementoClicado.innerHTML = NumeroAleatorio()
+            //    if (elementoClicado.style.backgroundColor == "blue")
+            //    {
+            //        elementoClicado.style.backgroundColor = "white"}
+            //    else {
+            //     elementoClicado.style.backgroundColor = "blue"
+            //    }
+            //   NumeroAleatorio()
             }
+            function NumeroAleatorio(min, max)
+            {
+            var numero = Math.random() * 75
+            numero = Math.floor(numero)
+            if (numero >= min )
+            {
+                return numero
+            }
+            else {
+                return NumeroAleatorio (min, max)
+            }
+            return numero
             }
 
-            ExibirListaDetalhada (B)
-            ExibirListaDetalhada (I)
-            ExibirListaDetalhada (N)
-            ExibirListaDetalhada (G)
-            ExibirListaDetalhada (O)
-            ExibirListaDetalhada (SORTEIO)
+        // var B = NumeroAleatorio(1, 15)
+        // var I = NumeroAleatorio(16, 30)
+        // var N = NumeroAleatorio(31, 45)
+        // var G = NumeroAleatorio(46, 60)
+        // var O = NumeroAleatorio(61, 75)
+        // var SORTEIO = NumeroAleatorio(1, 75)
 
             // ExibirLista(B)
             // ExibirLista(I)
