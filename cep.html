@@ -32,28 +32,41 @@
         var cidade = document.getElementById("cidade")
         var estado = document.getElementById("estado")
 
-        estado.value = "Ooooi, deu certo"
-        cidade.style.backgroundColor = "red"
-        bairro.style.border ="2x solid blue"
-        endereco.type = "number"
 
-        if(cep.value =="")
-    {
-        // alert("Campo CEP não pode estar em branco!")
-        var labelcep = document.getElementById ("labelcep")
-        labelcep.innerHTML = " CEP - <span class='erro'> Esse campo não pode estar em branco </span>"
+        var url= "https://viacep.com.br/ws/"+cep.value+"/json/"
+            fetch(url)
+            .then( (response)=> response.json())
+            .then( (dados)=> {
+                endereco.value = dados.logradouro
+                bairro.value = dados.bairro
+                cidade.value = dados.localidade
+                estado.value = dados.estado
 
-        // cep.style.border="2px solid red"
-        // cep.focus()
-        return false;
-    }
-    else{
-        // cep.style.border = "1px solid black"
-        var labelcep = document.getElementById ("labelcep")
-        labelcep.innerHTML = "CEP"
-    }
-        // cep.style.width = "350px"
-        // cep.style.height = "250px"
+            })
+
+
+    //     estado.value = "Ooooi, deu certo"
+    //     cidade.style.backgroundColor = "red"
+    //     bairro.style.border ="2x solid blue"
+    //     endereco.type = "number"
+
+    //     if(cep.value =="")
+    // {
+    //     // alert("Campo CEP não pode estar em branco!")
+    //     var labelcep = document.getElementById ("labelcep")
+    //     labelcep.innerHTML = " CEP - <span class='erro'> Esse campo não pode estar em branco </span>"
+
+    //     // cep.style.border="2px solid red"
+    //     // cep.focus()
+    //     return false;
+    // }
+    // else{
+    //     // cep.style.border = "1px solid black"
+    //     var labelcep = document.getElementById ("labelcep")
+    //     labelcep.innerHTML = "CEP"
+    // }
+    //     // cep.style.width = "350px"
+    //     // cep.style.height = "250px"
     }
 </script>
 </body>
